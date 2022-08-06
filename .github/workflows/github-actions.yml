@@ -18,7 +18,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Construction du fichier war
-      run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml -Pproduction
     - uses: cross-the-world/ssh-scp-ssh-pipelines@latest
       with:
         host: ${{ secrets.SSH_HOST }}
